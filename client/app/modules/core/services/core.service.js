@@ -1,0 +1,102 @@
+'use strict';
+var app = angular.module('com.module.core');
+
+app.service('CoreService', ['ENV', 'SweetAlert', 'toasty', function(ENV,
+  SweetAlert, toasty) {
+
+  this.env = ENV;
+
+  this.alert = function(title, text) {
+    SweetAlert.swal(title, text);
+  };
+
+  this.alertSuccess = function(title, text) {
+    SweetAlert.swal(title, text, 'success');
+  };
+
+  this.alertError = function(title, text) {
+    SweetAlert.swal(title, text, 'error');
+  };
+
+  this.alertWarning = function(title, text) {
+    SweetAlert.swal(title, text, 'warning');
+  };
+
+  this.alertInfo = function(title, text) {
+    SweetAlert.swal(title, text, 'info');
+  };
+
+  this.confirm = function(title, text, successCb, cancelCb) {
+    var config = {
+      title: title,
+      text: text,
+      type: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#DD6B55'
+    };
+    this._swal(config, successCb, cancelCb);
+  };
+
+  this._swal = function(config, successCb, cancelCb) {
+    SweetAlert.swal(config,
+      function(confirmed) {
+        if (confirmed) {
+          successCb();
+        } else {
+          cancelCb();
+        }
+      });
+  };
+
+  this.toastSuccess = function(title, text) {
+    toasty.pop.success({
+      title: title,
+      msg: text,
+      sound: false
+    });
+  };
+
+  this.toastError = function(title, text) {
+    toasty.pop.error({
+      title: title,
+      msg: text,
+      sound: false
+    });
+  };
+
+  this.toastWarning = function(title, text) {
+    toasty.pop.warning({
+      title: title,
+      msg: text,
+      sound: false
+    });
+  };
+
+  this.toastInfo = function(title, text) {
+    toasty.pop.info({
+      title: title,
+      msg: text,
+      sound: false
+    });
+  };
+
+  this.getTodaysDate=function(){
+      var today = new Date();
+      var dd = today.getDate();
+      var mm = today.getMonth()+1; //January is 0!
+      var yyyy = today.getFullYear();
+
+      if(dd<10) {
+        dd='0'+dd
+      }
+
+      if(mm<10) {
+        mm='0'+mm
+      }
+
+      today = mm+'/'+dd+'/'+yyyy;
+
+      return today;
+  }
+
+}]);

@@ -1,13 +1,19 @@
 'use strict';
 var app = angular.module('com.module.messages');
 
-function ModalInstanceCtrl($scope, $state, $stateParams,ApiService, AppAuth, $location, CoreService, gettextCatalog, $modalInstance, sender) {
+function MessageModalInstanceCtrl($scope, $state, $stateParams,ApiService, AppAuth, $location, CoreService, gettextCatalog, $modalInstance,User, message) {
 
-  $scope.sender = sender;
+  $scope.message = message;
+
+  User.findById({
+    id:message.senderId
+  },function(sender){
+    $scope.sender=sender;
+  });
 
 
   $scope.ok = function () {
-      $modalInstance.close($scope.sender);
+      $modalInstance.close($scope.message);
   };
 
   $scope.cancel = function () {
@@ -15,4 +21,4 @@ function ModalInstanceCtrl($scope, $state, $stateParams,ApiService, AppAuth, $lo
   };
 
 }
-app.controller('ModalInstanceCtrl', ModalInstanceCtrl);
+app.controller('MessageModalInstanceCtrl', MessageModalInstanceCtrl);
