@@ -6,22 +6,19 @@ var fs = require("fs");
 var Promise = require('bluebird');
 var app = require('../../server/server');
 module.exports = function(UploadCSV) {
-  var message = '';
-
-   UploadCSV.logmsg=function(msg,cb) {
-    console.log(msg);
-  };
 
   var Category =undefined;
-  var Supplier=undefined;
+
   var Product=undefined;
 
   var userId=undefined;
   var categories=undefined , suppliers=undefined ;
-
+var success=false;
   UploadCSV.convertToJSON=function(UserId) {
+
+
+
     Category = UploadCSV.app.models.Category;
-    Supplier = UploadCSV.app.models.Supplier;
     Product = UploadCSV.app.models.Product;
 
     userId=UserId;
@@ -37,9 +34,11 @@ module.exports = function(UploadCSV) {
                 console.log("inserted Products Data",inserted);
               })
               .catch(function(error){
+               success=false;
                 console.log("Error in creating Products ",error);
               })
             ;
+        success=true;
           console.log("inserted Categories Data",inserted);
       })
       .catch(function(error){
@@ -47,9 +46,11 @@ module.exports = function(UploadCSV) {
             createProducts(userId,categories)
               .then(function(inserted){
                 products=inserted;
+                success=true;
                 console.log("inserted Products Data",inserted);
               })
               .catch(function(error){
+                success=false;
                 console.log("Error in creating Products ",error);
               })
       });
@@ -303,14 +304,8 @@ module.exports = function(UploadCSV) {
   UploadCSV.remoteMethod(
     'convertToJSON',
     {
-      accepts: {arg: 'userId', type: 'string'}
-    }
-  );
-
-  UploadCSV.remoteMethod(
-    'logmsg',
-    {
-      accepts: {arg: 'msg', type: 'string'}
+      accepts: {arg: 'userId', type: 'string'},
+      returns: {arg: 'success', type: 'string'}
     }
   );
 

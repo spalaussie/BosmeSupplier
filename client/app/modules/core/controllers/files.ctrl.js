@@ -1,6 +1,6 @@
 'use strict';
 angular.module('com.module.core')
-  .controller('FilesCtrl', function($scope, $http, CoreService, gettextCatalog,UploadCSV) {
+  .controller('FilesCtrl', function($scope, $rootScope, $http, CoreService, gettextCatalog,UploadCSV, usSpinnerService) {
 
     $scope.load = function() {
       $http.get(CoreService.env.apiUrl + '/containers/files/files').success(
@@ -10,16 +10,16 @@ angular.module('com.module.core')
         });
     };
 
-    $scope.import = function(csvFile){
+    $scope.import = function(){
+     // startSpin();
+      UploadCSV.convertToJSON(
+        {
+          userId:localStorage.getItem('$LoopBack$currentUserId')
+        }).$promise.then(function successFunction(result) {
 
-      UploadCSV.logmsg({msg: 'Cool message'}, function (err) {
-         console.log("ProductOrder  Greeting ",err);
-      });
-
-      UploadCSV.convertToJSON({userId:localStorage.getItem('$LoopBack$currentUserId')}, function (err) {
-         console.log("ProductOrder  Greeting ",err);
-      });
-
+          $scope.someVariable = result;
+          console.log(result);
+        });
     };
 
 
@@ -49,5 +49,36 @@ angular.module('com.module.core')
       console.log(event);
       $scope.load();
     });
+
+
+
+      /*******************************************************************************/
+      /*****************************Spinner Global************************************/
+      /*******************************************************************************/
+      $scope.startcounter = 0;
+      function startSpin() {
+        if (!$scope.spinneractive) {
+          usSpinnerService.spin('spinner-1');
+          $scope.startcounter++;
+        }
+      }
+
+      function stopSpin() {
+        if ($scope.spinneractive) {
+          usSpinnerService.stop('spinner-1');
+        }
+      }
+      $scope.spinneractive = false;
+
+      $rootScope.$on('us-spinner:spin', function(event, key) {
+        $scope.spinneractive = true;
+      });
+
+      $rootScope.$on('us-spinner:stop', function(event, key) {
+        $scope.spinneractive = false;
+      });
+
+      /*******************************************************************************/
+
 
   });

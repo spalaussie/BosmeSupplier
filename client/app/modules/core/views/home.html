@@ -163,8 +163,9 @@
                           <h4 class="list-group-item-heading" translate>
                             <a href="" class="btn btn-default btn-xs" ng-click="import(file.name)"
                                title="Import file">
+
                               <span class="fa fa-external-link"></span>Import
-                            </a>
+                            </a> <br />Spinner active: {{spinneractive}}<br />Started: {{startcounter}} times<br />
                           </h4>
                         </td>
                       </tr>
@@ -176,6 +177,7 @@
             </div>
           </div>
         </tab>
+        <span us-spinner="{radius:30, width:8, length: 16}" spinner-theme="smallRed" spinner-key="spinner-1"></span>
       <!--   <tab heading="{{ 'Theme' | translate }}">
           <div class="row">
             <div class="col-md-6">

@@ -99,4 +99,7 @@ app.service('CoreService', ['ENV', 'SweetAlert', 'toasty', function(ENV,
       return today;
   }
 
+
+
+
 }]);

@@ -12,7 +12,7 @@
  **/
 angular.module('com.module.core')
   .controller('MainCtrl', function($scope, $rootScope, $state, $location,
-    CoreService, User, gettextCatalog, Product, Category, Supplier, Order, Message) {
+    CoreService, User, gettextCatalog, Product, Category, Supplier, Order, Message ) {
 
     $scope.currentUser = User.getCurrent();
 
@@ -61,5 +61,8 @@ angular.module('com.module.core')
           gettextCatalog.getString('You are logged out!'));
       });
     };
+
+
+
 
   });
