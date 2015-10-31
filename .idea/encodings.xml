@@ -18,6 +18,7 @@
     <file url="file://$PROJECT_DIR$/../bosmeClient/common/models/message.js" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/../bosmeClient/common/models/message.json" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/../bosmeClient/common/models/user.json" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../bosmeClient/server/datasources.json" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/../bosmeClient/server/model-config.json" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/client/app/css/AdminLTE.css" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/client/app/css/main.css" charset="UTF-8" />
@@ -76,6 +77,7 @@
     <file url="file://$PROJECT_DIR$/common/models/supplier.json" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/common/models/uploadCSV.js" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/common/models/user.json" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/server/datasources.json" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/server/model-config.json" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/../testAuth/client/app/modules/core/config/core.config.js" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/../testAuth/client/app/modules/users/controllers/register.ctrl.js" charset="UTF-8" />
