@@ -2,33 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="eb5cc5bf-54b8-4ea9-bbe5-929f1ff0ed0f" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/app/bower_components/angular-spinner/.bower.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/app/bower_components/spin.js/.bower.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/app/bower_components/angular-spinner/.editorconfig" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/app/bower_components/angular-spinner/.gitignore" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/app/bower_components/spin.js/.gitignore" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/app/bower_components/angular-spinner/.jshintrc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/app/bower_components/spin.js/.jshintrc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/app/bower_components/angular-spinner/.npmignore" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/app/bower_components/spin.js/.npmignore" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/app/bower_components/spin.js/.spmignore" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/app/bower_components/angular-spinner/.travis.yml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/app/bower_components/angular-spinner/CHANGELOG.md" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/app/bower_components/angular-spinner/Gruntfile.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/app/bower_components/spin.js/LICENSE.md" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/app/bower_components/angular-spinner/README.md" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/app/bower_components/spin.js/README.md" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/app/bower_components/angular-spinner/angular-spinner.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/app/bower_components/angular-spinner/angular-spinner.min.js.map" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/app/bower_components/angular-spinner/angular-spinner.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/app/bower_components/angular-spinner/bower.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/app/bower_components/spin.js/bower.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/app/bower_components/spin.js/jquery.spin.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/app/bower_components/angular-spinner/karma.conf.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/app/bower_components/angular-spinner/package.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/app/bower_components/spin.js/spin.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/app/bower_components/spin.js/spin.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/app/bower_components/angular-spinner/tests.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="bosme2.iws" />
@@ -505,7 +478,13 @@
       <option name="project" value="LOCAL" />
       <updated>1446357469188</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="spinning removed">
+      <created>1446357593106</created>
+      <option name="number" value="00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1446357593106</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TodoView">
