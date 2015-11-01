@@ -55,7 +55,7 @@ angular.module('com.module.core')
       /*******************************************************************************/
       /*****************************Spinner Global************************************/
       /*******************************************************************************/
-      $scope.startcounter = 0;
+      /*$scope.startcounter = 0;
       function startSpin() {
         if (!$scope.spinneractive) {
           usSpinnerService.spin('spinner-1');
@@ -76,7 +76,7 @@ angular.module('com.module.core')
 
       $rootScope.$on('us-spinner:stop', function(event, key) {
         $scope.spinneractive = false;
-      });
+      });*/
 
       /*******************************************************************************/
 
