@@ -1,6 +1,6 @@
 'use strict';
 angular.module('com.module.core')
-  .controller('FilesCtrl', function($scope, $rootScope, $http, CoreService, gettextCatalog,UploadCSV, usSpinnerService) {
+  .controller('FilesCtrl', function($scope, $rootScope, $http, CoreService, gettextCatalog,UploadCSV) {
 
     $scope.load = function() {
       $http.get(CoreService.env.apiUrl + '/containers/files/files').success(
