@@ -237,12 +237,6 @@ angular.module('com.module.users')
                 });
               }*/
 
-
-
-
-
-
-
               function updateDashBoard(){
                 Category.find(
                   {
@@ -256,7 +250,7 @@ angular.module('com.module.users')
                       }
                     })
                   });
-                Supplier.find(
+/*                User.find(
                   {
                     filter: {
                       where: {userId: AppAuth.currentUser.id}
@@ -267,7 +261,7 @@ angular.module('com.module.users')
                         box.quantity=suppliers.length;
                       }
                     })
-                  });
+                  })*/;
               }
 
               CoreService.toastSuccess(gettextCatalog.getString(

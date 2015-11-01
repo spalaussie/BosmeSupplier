@@ -266,6 +266,8 @@ var success=false;
                   resolve(inserted);
                 }
               });
+            }else{
+              reject(err);
             }
           });
       });
