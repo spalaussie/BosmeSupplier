@@ -7,7 +7,7 @@
  * @requires $rootScope
  **/
 angular.module('com.module.core')
-  .controller('HomeCtrl', function($scope, $rootScope,usSpinnerService) {
+  .controller('HomeCtrl', function($scope, $rootScope) {
 
     $scope.count = {};
     $scope.menuoptions = $rootScope.menu;
