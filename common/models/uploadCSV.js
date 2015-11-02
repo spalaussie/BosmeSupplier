@@ -13,16 +13,14 @@ module.exports = function(UploadCSV) {
 
   var userId=undefined;
   var categories=undefined , suppliers=undefined ;
-var success=false;
+  var success=false;
+
   UploadCSV.convertToJSON=function(UserId) {
-
-
 
     Category = UploadCSV.app.models.Category;
     Product = UploadCSV.app.models.Product;
 
     userId=UserId;
-
 
     createCategories(userId)
       .then(function(inserted){
@@ -64,7 +62,7 @@ var success=false;
         fields: {name: true}
       }, function(err, cats, created) {
         if (err) {
-          console.error('err', err);
+          console.error('cant find Categories', err);
         }
         categories=cats;
       });
@@ -74,12 +72,11 @@ var success=false;
   }
 
 
-
   var createProducts= function(userId, categories) {
     return new Promise(function (resolve, reject) {
       var Converter = require("csvtojson").Converter;
       var fileStream = fs.createReadStream("storage/files/products.csv");
-
+      console.log("Creating products");
 //new converter instance
       var param = {};
       var converter = new Converter(param);
@@ -89,9 +86,9 @@ var success=false;
 
         var newProds=[];
 
-        Product.find({where: {userId: userId}, fields: {id: true, name: true}}, function (err, prods, created) {
+        Product.find({where: {userId: userId}, fields: {id: true, name: true}}, function (err, prods) {
           if (err) {
-            console.error('err', err);
+            console.error('cant find existing products', err);
           }
           products = prods;
 
@@ -99,10 +96,10 @@ var success=false;
             if (ifExists(s, products)) {
             } else {
               newProds.push(s);
-              // console.log(s.name);
+               console.log(s.name);
             }
           });
-          //console.log(newProds);
+          console.log(newProds);
           if (newProds.length > 0) {
             newProds.forEach(function (d) {
               d.userId = userId,
@@ -153,72 +150,6 @@ var success=false;
     }
     return id;
   }
-
- /* var createSuppliers= function(userId){
-    return new Promise(function(resolve, reject) {
-
-      var Converter = require("csvtojson").Converter;
-      var fileStream = fs.createReadStream("storage/files/suppliers.csv");
-      //new converter instance
-      var param = {};
-      var converter = new Converter(param);
-
-      //end_parsed will be emitted once parsing finished
-
-      converter.on("end_parsed", function (jsonObj) {
-        // console.log(jsonObj); //here is your result json object
-
-        var newSupp=[];
-
-        Supplier.find(
-          {
-            where: {userId:userId},
-            fields: {id:true,name: true}
-          }, function(err, suppliers, created) {
-            if (err) {
-              console.error('err', err);
-            }
-
-            jsonObj.forEach(function(s){
-              if(ifExists(s,suppliers)){
-              }else {
-                newSupp.push(s);
-                // console.log(s.name);
-              }
-            });
-            //console.log(newSupp);
-            if(newSupp.length>0) {
-              newSupp.forEach(function (d) {
-                d.userId = userId
-              });
-
-              Supplier.create(newSupp, function (err, res) {
-                if (err){reject(err);}
-                else {
-                  var inserted = res.concat(suppliers);;
-                  resolve(inserted);
-                }
-              });
-            }
-          });
-      });
-
-//read from file
-      // This will wait until we know the readable stream is actually valid before piping
-      fileStream.on('open', function () {
-        // This just pipes the read stream to the response object (which goes to the client)
-        fileStream.pipe(converter);
-      });
-
-      // This catches any errors that happen while creating the readable stream (usually invalid names)
-      fileStream.on('error', function(err) {
-        //converter.end(err);
-        reject(err);
-        //console.log("File doesnot exists", err);
-      });
-      //fileStream.pipe(converter);
-    });
-};*/
 
   var createCategories= function(userId){
     return new Promise(function(resolve, reject){
@@ -310,8 +241,6 @@ var success=false;
       returns: {arg: 'success', type: 'string'}
     }
   );
-
-
 };
 
 
