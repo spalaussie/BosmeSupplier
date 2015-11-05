@@ -25,32 +25,27 @@ module.exports = function(UploadCSV) {
     createCategories(userId)
       .then(function(inserted){
         categories=inserted;
-
            createProducts(userId,categories)
               .then(function(inserted){
+               success=true;
+               return success;;
                 products=inserted;
                 console.log("inserted Products Data",inserted);
               })
               .catch(function(error){
                success=false;
+               return success;
                 console.log("Error in creating Products ",error);
               })
             ;
         success=true;
+        return success;
           console.log("inserted Categories Data",inserted);
       })
       .catch(function(error){
+        success=false;
+        return success;
         console.log("Error in creating categories ",error);
-            createProducts(userId,categories)
-              .then(function(inserted){
-                products=inserted;
-                success=true;
-                console.log("inserted Products Data",inserted);
-              })
-              .catch(function(error){
-                success=false;
-                console.log("Error in creating Products ",error);
-              })
       });
 
   };
@@ -238,7 +233,7 @@ module.exports = function(UploadCSV) {
     'convertToJSON',
     {
       accepts: {arg: 'userId', type: 'string'},
-      returns: {arg: 'success', type: 'string'}
+      returns: {arg: 'success', type: 'boolean'}
     }
   );
 };

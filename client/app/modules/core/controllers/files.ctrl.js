@@ -15,8 +15,7 @@ angular.module('com.module.core')
       UploadCSV.convertToJSON(
         {
           userId:localStorage.getItem('$LoopBack$currentUserId')
-        }).$promise.then(function successFunction(result) {
-
+        },function(result) {
           $scope.someVariable = result;
           console.log(result);
         });
