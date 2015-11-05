@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="eb5cc5bf-54b8-4ea9-bbe5-929f1ff0ed0f" name="Default" comment="Model Changes for User changed to user in Order relationship with User">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/common/models/order.json" afterPath="$PROJECT_DIR$/common/models/order.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/app/js/service.js" afterPath="$PROJECT_DIR$/client/app/js/service.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="bosme2.iws" />
@@ -44,7 +44,10 @@
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="-6.6969695">
               <caret line="11754" column="46" selection-start-line="11754" selection-start-column="46" selection-end-line="11754" selection-end-column="46" />
-              <folding />
+              <folding>
+                <marker date="1446690929556" expanded="true" signature="161264:161265" placeholder="/** @ngdoc method ...*/" />
+                <marker date="1446690929556" expanded="true" signature="207428:207486" placeholder="{...}" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -62,8 +65,8 @@
       <file leaf-file-name="order.json" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/common/models/order.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.6502058">
-              <caret line="141" column="16" selection-start-line="141" selection-start-column="16" selection-end-line="141" selection-end-column="17" />
+            <state vertical-scroll-proportion="0.75514406">
+              <caret line="144" column="4" selection-start-line="144" selection-start-column="4" selection-end-line="144" selection-end-column="4" />
               <folding />
             </state>
           </provider>
@@ -548,7 +551,13 @@
       <option name="project" value="LOCAL" />
       <updated>1446690313241</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="Model Changes for User changed to user in Order relationship with User">
+      <created>1446690842045</created>
+      <option name="number" value="00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1446690842045</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TodoView">
@@ -993,7 +1002,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-6.6969695">
           <caret line="11754" column="46" selection-start-line="11754" selection-start-column="46" selection-end-line="11754" selection-end-column="46" />
-          <folding />
+          <folding>
+            <marker date="1446690929556" expanded="true" signature="161264:161265" placeholder="/** @ngdoc method ...*/" />
+            <marker date="1446690929556" expanded="true" signature="207428:207486" placeholder="{...}" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1015,8 +1027,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/common/models/order.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6502058">
-          <caret line="141" column="16" selection-start-line="141" selection-start-column="16" selection-end-line="141" selection-end-column="17" />
+        <state vertical-scroll-proportion="0.75514406">
+          <caret line="144" column="4" selection-start-line="144" selection-start-column="4" selection-end-line="144" selection-end-column="4" />
           <folding />
         </state>
       </provider>

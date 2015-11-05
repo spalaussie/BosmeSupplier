@@ -4847,6 +4847,12 @@ module.factory(
       { 'id': '@id' },
       {
 
+        // INTERNAL. Use Order.user() instead.
+        "prototype$__get__user": {
+          url: urlBase + "/Orders/:id/user",
+          method: "GET"
+        },
+
         /**
          * @ngdoc method
          * @name lbServices.Order#prototype$__findById__products
@@ -5102,12 +5108,6 @@ module.factory(
           },
           url: urlBase + "/Orders/:id/productOrders/:fk",
           method: "PUT"
-        },
-
-        // INTERNAL. Use Order.user() instead.
-        "prototype$__get__user": {
-          url: urlBase + "/Orders/:id/user",
-          method: "GET"
         },
 
         /**
@@ -5871,6 +5871,42 @@ module.factory(
     */
     R.modelName = "Order";
 
+
+        /**
+         * @ngdoc method
+         * @name lbServices.Order#user
+         * @methodOf lbServices.Order
+         *
+         * @description
+         *
+         * Fetches belongsTo relation user.
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *  - `id` – `{*}` - PersistedModel id
+         *
+         *  - `refresh` – `{boolean=}` - 
+         *
+         * @param {function(Object,Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @returns {Object} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * <em>
+         * (The remote method definition does not provide any description.
+         * This usually means the response is a `User` object.)
+         * </em>
+         */
+        R.user = function() {
+          var TargetResource = $injector.get("User");
+          var action = TargetResource["::get::Order::user"];
+          return action.apply(R, arguments);
+        };
     /**
      * @ngdoc object
      * @name lbServices.Order.productOrders
@@ -6170,42 +6206,6 @@ module.factory(
         R.productOrders.updateById = function() {
           var TargetResource = $injector.get("ProductOrder");
           var action = TargetResource["::updateById::Order::productOrders"];
-          return action.apply(R, arguments);
-        };
-
-        /**
-         * @ngdoc method
-         * @name lbServices.Order#user
-         * @methodOf lbServices.Order
-         *
-         * @description
-         *
-         * Fetches belongsTo relation user.
-         *
-         * @param {Object=} parameters Request parameters.
-         *
-         *  - `id` – `{*}` - PersistedModel id
-         *
-         *  - `refresh` – `{boolean=}` - 
-         *
-         * @param {function(Object,Object)=} successCb
-         *   Success callback with two arguments: `value`, `responseHeaders`.
-         *
-         * @param {function(Object)=} errorCb Error callback with one argument:
-         *   `httpResponse`.
-         *
-         * @returns {Object} An empty reference that will be
-         *   populated with the actual data once the response is returned
-         *   from the server.
-         *
-         * <em>
-         * (The remote method definition does not provide any description.
-         * This usually means the response is a `User` object.)
-         * </em>
-         */
-        R.user = function() {
-          var TargetResource = $injector.get("User");
-          var action = TargetResource["::get::Order::user"];
           return action.apply(R, arguments);
         };
 
