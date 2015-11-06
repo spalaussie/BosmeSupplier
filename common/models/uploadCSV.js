@@ -15,7 +15,7 @@ module.exports = function(UploadCSV) {
   var categories=undefined , suppliers=undefined ;
   var success=false;
 
-  UploadCSV.convertToJSON=function(UserId) {
+  UploadCSV.convertToJSON=function(UserId, cb) {
 
     Category = UploadCSV.app.models.Category;
     Product = UploadCSV.app.models.Product;
@@ -233,7 +233,7 @@ module.exports = function(UploadCSV) {
     'convertToJSON',
     {
       accepts: {arg: 'userId', type: 'string'},
-      returns: {arg: 'success', type: 'boolean'}
+      returns: {arg: 'success', type: 'boolean', root:true}
     }
   );
 };

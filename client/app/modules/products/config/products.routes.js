@@ -23,11 +23,6 @@ angular.module('com.module.products')
               filter:{where: { userId: localStorage.getItem('$LoopBack$currentUserId')}}
             }).$promise;
           },
-          suppliers: function (Supplier) {
-            return Supplier.find({
-              filter:{where: { userId:  localStorage.getItem('$LoopBack$currentUserId')}}
-            }).$promise;
-          },
           url: function () {
             return {
               returnUrl: 'app.products'
@@ -49,11 +44,6 @@ angular.module('com.module.products')
         resolve: {
           categories: function (Category) {
             return Category.find({
-              filter:{where: { userId:  localStorage.getItem('$LoopBack$currentUserId')}}
-            }).$promise;
-          },
-          suppliers: function (Supplier) {
-            return Supplier.find({
               filter:{where: { userId:  localStorage.getItem('$LoopBack$currentUserId')}}
             }).$promise;
           },
@@ -123,7 +113,7 @@ angular.module('com.module.products')
         }
       })
 
-      .state('app.products.addSupplierProduct', {
+     /* .state('app.products.addSupplierProduct', {
         url: '/addSupplierProduct/:supplierId',
         templateUrl: 'modules/products/views/form.html',
         controller: 'ProductsFormCtrl',
@@ -177,6 +167,6 @@ angular.module('com.module.products')
             return Product.findById({id: $stateParams.productId}).$promise;
           }
         }
-      })
+      })*/
     ;
   });

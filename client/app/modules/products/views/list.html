@@ -1,19 +1,24 @@
-  <div class="panel panel-default" ng-repeat="product in products">
-    <div class="panel-heading">
-        <div class="pull-right">
-            <a href="" class="btn btn-success btn-xs" ui-sref="^.editproduct({ productId: product.id })"
+<div class="panel panel-default" ng-repeat="category in categories">
+  <div class="panel-heading">
+    <div class="pull-right"></div>
+    <h3 class="panel-title">{{ category.name }} &nbsp; items</h3>
+  </div>
+    <table class="table table-bordered" ng-show="category.products.length">
+      <tbody>
+      <tr ng-repeat="item in category.products">
+        <th>
+          <a href="">{{item.name}}</a>
+          <small>{{item.note}}</small>
+          <div class="pull-right">
+            <span class="label label-default">{{item.price|currency}} / {{item.unit}}</span>
+            <a href="" class="btn btn-success btn-xs" ui-sref="^.editproduct({ productId: item.id })"
                title="{{ 'Edit product' | translate }}"><i class="fa fa-pencil"></i></a>
-            <a href="" class="btn btn-danger btn-xs" ng-click="deleteproduct({ id: product.id })"
+            <a href="" class="btn btn-danger btn-xs" ng-click="deleteproduct({ id: item.id })"
                title="{{ 'Delete product' | translate }}"><i class="fa fa-trash-o"></i></a>
-        </div>
-        <h3 class="panel-title">{{ product.name }}
-
-          </h3>
-    </div>
-      <div class="panel-body">
-     <P>{{ product.note }}</P>
-
-    </div>
-
+          </div>
+        </th>
+      </tr>
+      </tbody>
+    </table>
 </div>
 

@@ -1,7 +1,7 @@
 'use strict';
 var app = angular.module('com.module.products');
 
-function ProductsFormCtrl($rootScope, $scope, $stateParams, $state, CoreService, Product,ApiService, AppAuth, $location, gettextCatalog,categories, product, suppliers,url) {
+function ProductsFormCtrl($rootScope, $scope, $stateParams, $state, CoreService, Product,ApiService, AppAuth, $location, gettextCatalog,categories, product, url) {
 
 
   var self = this;
@@ -33,7 +33,8 @@ function ProductsFormCtrl($rootScope, $scope, $stateParams, $state, CoreService,
           };
         }),
         placeholder: 'Select category'
-      }/*,
+      }
+      /*,
       supplierId: {
         title: gettextCatalog.getString('Supplier'),
         type: 'number',
@@ -45,7 +46,8 @@ function ProductsFormCtrl($rootScope, $scope, $stateParams, $state, CoreService,
           };
         }),
         placeholder: 'Select supplier'
-      }*/,
+      }*/
+      ,
       unit: {
         title: gettextCatalog.getString('Unit'),
         type: 'string'
@@ -90,7 +92,7 @@ function ProductsFormCtrl($rootScope, $scope, $stateParams, $state, CoreService,
     });
   }
 
-  function goBackToUrl(){
+  this.goBackToUrl=function(){
     if(url.returnUrl==='app.categories.products'){
       $state.go(url.returnUrl, { categoryId : categoryId });
     }else if(url.returnUrl==='app.suppliers.products'){
@@ -99,7 +101,7 @@ function ProductsFormCtrl($rootScope, $scope, $stateParams, $state, CoreService,
     else {
       $state.go('^.list');
     };
-  }
+  };
 
   this.onSubmit = function() {
     self.product.userId=localStorage.getItem('$LoopBack$currentUserId');
@@ -110,7 +112,7 @@ function ProductsFormCtrl($rootScope, $scope, $stateParams, $state, CoreService,
         'Your product is safe with us!'));
       updateDashBoard();
 
-      goBackToUrl();
+      self.goBackToUrl();
     }, function(err) {
       console.log(err);
     });

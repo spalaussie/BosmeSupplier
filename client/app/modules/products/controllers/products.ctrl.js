@@ -14,12 +14,29 @@ angular.module('com.module.products')
     loadProducts();
 
     function loadProducts() {
-      Product.find({
+
+      Category.find({
+        filter: {
+          where: {userId: localStorage.getItem('$LoopBack$currentUserId')},
+          include: {
+            relation: 'products',   // include the owner object
+            scope: {
+              order: 'name ASC'
+            }
+          }, order: 'name ASC'
+        }
+      }, function (categories) {
+        $scope.categories = categories;
+
+      });
+
+
+     /* Product.find({
           filter: {where: {userId: localStorage.getItem('$LoopBack$currentUserId')}}
         }, function (products) {
           $scope.products = products;
         }
-      );
+      );*/
 
       if (productId) {
         $scope.product = Product.findById({
