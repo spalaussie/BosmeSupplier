@@ -1,7 +1,12 @@
 <div class="panel panel-default" ng-repeat="category in categories">
   <div class="panel-heading">
     <div class="pull-right"></div>
-    <h3 class="panel-title">{{ category.name }} &nbsp; items</h3>
+    <h3 class="panel-title">{{ category.name }} &nbsp; items
+        <span>
+          <a href="" class="btn btn-success btn-xs" style="color: #ffffff"
+             title="{{ 'Products' | translate }}">{{category.products.length}} </a>
+          </span>
+    </h3>
   </div>
     <table class="table table-bordered" ng-show="category.products.length">
       <tbody>
